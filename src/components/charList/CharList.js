@@ -34,12 +34,10 @@ class CharList extends Component {
         })
     }
 
-    // Этот метод создан для оптимизации, 
-    // чтобы не помещать такую конструкцию в метод render
     renderItems(arr) {
         const items =  arr.map((item) => {
             let imgStyle = {'objectFit' : 'cover'};
-            if (item.thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
+            if (item.thumbnail === 'https://marvel-server-zeta.vercel.app/') {
                 imgStyle = {'objectFit' : 'unset'};
             }
             
@@ -53,7 +51,7 @@ class CharList extends Component {
                 </li>
             )
         });
-        // А эта конструкция вынесена для центровки спиннера/ошибки
+
         return (
             <ul className="char__grid">
                 {items}
